@@ -1,6 +1,7 @@
 load "Menu.rb"
 load "SousMenu.rb"
 
+
 require "gtk3"
 
 class GestionnaireMenus
@@ -19,7 +20,9 @@ class GestionnaireMenus
 
         @menu = Menu.creer(self)
         @sousMenu = SousMenu.creer(self, @menu)
+        @menuRegles = MenuRegles.creer(self,@menu)
         @menu.sousMenu = @sousMenu
+        @menu.menuRegles = @menuRegles
         @menu.afficheToi()
     end
 
