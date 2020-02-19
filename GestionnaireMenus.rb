@@ -35,7 +35,7 @@ class GestionnaireMenus
 end
 
 window = Gtk::Window.new("First Menu")
-window.set_size_request(400, 400)
+window.set_size_request(800, 450)
 window.set_border_width(10)
 gMenu = GestionnaireMenus.new(window)
 
