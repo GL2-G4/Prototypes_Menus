@@ -21,8 +21,10 @@ class GestionnaireMenus
         @menu = Menu.creer(self)
         @sousMenu = SousMenu.creer(self, @menu)
         @menuRegles = MenuRegles.creer(self,@menu)
+        @menuModeDeJeu = MenuModeDeJeu.creer(self, @menu)
         @menu.sousMenu = @sousMenu
         @menu.menuRegles = @menuRegles
+        @menu.menuModeDeJeu = @menuModeDeJeu
         @menu.afficheToi()
     end
 
