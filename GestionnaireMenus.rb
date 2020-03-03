@@ -10,7 +10,7 @@ class GestionnaireMenus
 
     def GestionnaireMenus.creer(window)
         new(window)
-      end
+    end
  
     def initialize(window)
         @window = window
