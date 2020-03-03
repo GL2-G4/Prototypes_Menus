@@ -51,3 +51,5 @@ end
     return "Regles"
   end
 end
+
+#http://pochopoch.blogspot.com/2013/04/layout-management-in-ruby-gtk.html

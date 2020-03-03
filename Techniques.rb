@@ -29,7 +29,7 @@ class Techniques
     @text.editable=(false)
     @button = Gtk::Button.new(:label => "- Retour -")
     @button.signal_connect "clicked" do |_widget|
-      gMenu.changerMenu(@pere, self)
+    gMenu.changerMenu(@pere, self)
     end
 end
 
