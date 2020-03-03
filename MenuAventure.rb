@@ -1,6 +1,8 @@
 require "gtk3"
 class MenuAventure
 
+    private_class_method :new
+
     def MenuAventure.creer(gMenu, menuPere)
         new(gMenu, menuPere)
     end
@@ -10,34 +12,32 @@ class MenuAventure
         @box = gMenu.box
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
+        @vBox2 = Gtk::Box.new(:vertical)
+        @listeBoutons = Array.new(10);
 
         @button1 = Gtk::Button.new(:label => "- Retour -")
         @button1.signal_connect "clicked" do |_widget|
             gMenu.changerMenu(@pere, self)
         end
-        @button2 = Gtk::Button.new(:label => "Aventure")
-        @button2.signal_connect "clicked" do |_widget|
-            print "Aventure Bonjour tout le monde\n"
-        end
-        @button3 = Gtk::Button.new(:label => "Apprentissage")
-        @button3.signal_connect "clicked" do |_widget|
-            print "Apprend Bonjour tout le monde\n"
-        end
-        @button4 = Gtk::Button.new(:label => "Challenge")
-        @button4.signal_connect "clicked" do |_widget|
-            print "Challenge Bonjour tout le monde\n"
-        end
+        @listeBoutons.each { |bouton|
+            bouton = Gtk::Button.new()
+            bouton.set_label("Bouton" + @listeBoutons.find_index(bouton).to_s)
+            print  @listeBoutons.find_index(bouton).to_s
+            bouton.signal_connect "clicked" do |_widget|
+                print "Salut tout le monde"
+            end
+            @vBox2.add(bouton)
+        } 
     end
 
     def afficheToi()
-        @vBox.add(@button2)
-        @vBox.add(@button3)
-        @vBox.add(@button4)
-        @vBox.add(@button1)
+        @vBox.add(@button1) 
         @box.add(@vBox)
+        @box.add(@vBox2)
     end
 
     def enleveToi()
         @box.remove(@vBox)
+        @box.remove(@vBox2)
     end
 end

@@ -1,5 +1,10 @@
+load "MenuAventure.rb"
+
 require "gtk3"
+
 class MenuModeDeJeu
+
+    private_class_method :new
 
     def MenuModeDeJeu.creer(gMenu, menuPere)
         new(gMenu, menuPere)
@@ -17,7 +22,7 @@ class MenuModeDeJeu
         end
         @button2 = Gtk::Button.new(:label => "Aventure")
         @button2.signal_connect "clicked" do |_widget|
-            print "Aventure Bonjour tout le monde\n"
+            gMenu.changerMenu(MenuAventure.creer(@gMenu, self), self)
         end
         @button3 = Gtk::Button.new(:label => "Apprentissage")
         @button3.signal_connect "clicked" do |_widget|

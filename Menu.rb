@@ -16,10 +16,12 @@ class Menu
     end
 
     def initialize(gMenu)
+        
         @gMenu = gMenu
         @hBox = gMenu.box
         @vBox1 = Gtk::Box.new(:vertical)
         @vBox2 = Gtk::Box.new(:vertical)
+
         @button1 = Gtk::Button.new(:label => 'Tutoriel')
         @button1.signal_connect('clicked') {
             print "Bonjour tout le monde\n"
@@ -44,6 +46,8 @@ class Menu
         @button6.signal_connect('clicked') {
             Gtk.main_quit
         }
+
+        
 
     end
 
