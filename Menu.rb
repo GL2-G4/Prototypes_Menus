@@ -1,11 +1,14 @@
 load "SousMenu.rb"
 load "MenuRegles.rb"
+load "MenuModeDeJeu.rb"
 require "gtk3"
 
 class Menu
 
     attr :sousMenu, true
     attr :menuRegles, true
+    attr :menuModeDeJeu, true
+
     private_class_method :new
 
     def Menu.creer(gMenu)
@@ -23,7 +26,7 @@ class Menu
         }
         @button2 = Gtk::Button.new(:label => 'Mode de jeu')
         @button2.signal_connect('clicked') {
-            print "Bonjour tout le monde\n"
+            gMenu.changerMenu(@menuModeDeJeu, self)
         }
         @button3 = Gtk::Button.new(:label => 'Boutique')
         @button3.signal_connect('clicked') {
