@@ -22,6 +22,12 @@ class Regles
         )
     @text = Gtk::TextView.new( temp)
     @text.editable=(false)
+    str = "REGLES\n\n"
+    temp2 = Gtk::TextBuffer.new()
+    temp2.set_text(
+      str.rjust(95)
+      )
+    @titre = Gtk::Label.new( str)
     @image1 = Gtk::Image.new("regles1.jpg")
     @image2 = Gtk::Image.new("regles2.jpg")
     @image1.set_padding(10, 10)
@@ -30,10 +36,14 @@ class Regles
     @button.signal_connect "clicked" do |_widget|
       gMenu.changerMenu(@pere, self)
     end
+    
 end
 
   def afficheToi()
+    @vBox1.pack_start(Gtk::Alignment.new(0, 0, 1, 1), :expand => false)
     @vBox1.add(@button)
+    @vBox2.pack_start(Gtk::Alignment.new(1, 0, 0, 0), :expand => false)
+    @vBox2.add(@titre)
     @vBox2.add(@text)
     @hBox2.add(@image1)
     @hBox2.add(@image2)
