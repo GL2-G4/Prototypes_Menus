@@ -7,12 +7,14 @@ require "gtk3"
 class GestionnaireMenus
 
     attr :box, true
+    attr :window, true
 
     def GestionnaireMenus.creer(window)
         new(window)
     end
  
     def initialize(window)
+
         @window = window
 
         @box =  Gtk::Box.new(:horizontal)

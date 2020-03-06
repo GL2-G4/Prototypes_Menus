@@ -12,21 +12,31 @@ class MenuAventure
         @box = gMenu.box
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
-        @vBox2 = Gtk::Box.new(:vertical)
+        @vBox2 = Gtk::ButtonBox.new(:vertical)
         @listeBoutons = Array.new(10);
 
         @button1 = Gtk::Button.new(:label => "- Retour -")
         @button1.signal_connect "clicked" do |_widget|
             gMenu.changerMenu(@pere, self)
         end
-        @listeBoutons.each { |bouton|
+        @listeBoutons.each_index { |index|
+            boxBouton = Gtk::ButtonBox.new(:horizontal)
+            border = Gtk::Frame.new()
+            boxBouton.set_border_width(10)
+            boxBouton.set_width_request(gMenu.window.size().at(0) - 105)
+            text = Gtk::TextBuffer.new()
+            text.set_text("coucou")
+            textBox = Gtk::TextView.new(text)
             bouton = Gtk::Button.new()
-            bouton.set_label("Bouton" + @listeBoutons.find_index(bouton).to_s)
-            print  @listeBoutons.find_index(bouton).to_s
+            bouton.set_label("Puzzle n°" + index.to_s)
             bouton.signal_connect "clicked" do |_widget|
-                print "Salut tout le monde"
+                puts "Jouer au puzzle n°" + index.to_s
             end
-            @vBox2.add(bouton)
+            @listeBoutons[index] = bouton
+            boxBouton.add(textBox)
+            boxBouton.add(bouton)
+            border.add(boxBouton)
+            @vBox2.add(border)
         } 
     end
 
