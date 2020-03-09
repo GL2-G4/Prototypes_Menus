@@ -40,10 +40,24 @@ class GestionnaireMenus
         @window.show_all
     end
 
+    def changerTaille(t)
+        if(t == "1920 x 1080")
+            window.set_size_request(1920, 1080)
+        elsif (t == "1600 x 900")
+            window.set_size_request(1600, 900)
+        elsif (t == "1280 x 720")
+            window.set_size_request(1280, 720)
+        elsif (t == "720 x 480")
+            window.set_size_request(720, 480)
+        end
+        @window.show_all
+    end
+
 end
 
 window = Gtk::Window.new("First Menu")
-window.set_size_request(800, 450)
+window.set_default_size(720, 480)
+window.resizable=(false)
 window.set_border_width(10)
 gMenu = GestionnaireMenus.new(window)
 
