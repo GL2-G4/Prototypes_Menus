@@ -22,33 +22,50 @@ class Parametres
         @titre = Gtk::Label.new( str)
 
         # Selection d'un style de grille
+
+            # A combobox with string IDs
+
+                combo = Gtk::ComboBoxText.new
+                combo.append("t1", "Theme 1")
+                combo.append("t2", "Theme 2")
+                combo.append("t3", "Theme 3")
+
             boxBouton = Gtk::ButtonBox.new(:horizontal)
             @border = Gtk::Frame.new()
             boxBouton.set_border_width(10)
             boxBouton.set_width_request(gMenu.window.size().at(0) - 105)
             textBox = Gtk::Label.new("Style de la grille : ")
-            bouton = Gtk::Button.new()
-            bouton.set_label("Theme 1")
-            bouton.signal_connect "clicked" do |_widget|
+            #bouton = Gtk::Button.new()
+            #bouton.set_label("Theme 1")
+            #bouton.signal_connect "clicked" do |_widget|
                 # TODO
-            end
+            #end
             boxBouton.add(textBox)
-            boxBouton.add(bouton)
+            #boxBouton.add(bouton)
+            boxBouton.add(combo)
             @border.add(boxBouton)
 
         # Selection d'une taille de fenetre
+
+                combo2 = Gtk::ComboBoxText.new
+                combo2.append("t1", "1920 x 1080")
+                combo2.append("t2", "1600 x 900")
+                combo2.append("t3", "1280 x 720")
+                combo2.append("t3", "720 x 480")
+
             boxBouton2 = Gtk::ButtonBox.new(:horizontal)
             @border2 = Gtk::Frame.new()
             boxBouton2.set_border_width(10)
             boxBouton2.set_width_request(gMenu.window.size().at(0) - 105)
             textBox2 = Gtk::Label.new("Taille de la fenêtre :")
-            bouton2 = Gtk::Button.new()
-            bouton2.set_label("1920 x 1080")
-            bouton2.signal_connect "clicked" do |_widget|
+            #bouton2 = Gtk::Button.new()
+            #bouton2.set_label("1920 x 1080")
+            #bouton2.signal_connect "clicked" do |_widget|
                 # TODO
-            end
+            #end
             boxBouton2.add(textBox2)
-            boxBouton2.add(bouton2)
+            #boxBouton2.add(bouton2)
+            boxBouton2.add(combo2)
             @border2.add(boxBouton2)
 
         # Selection de l'autocomplétion 
@@ -67,6 +84,15 @@ class Parametres
             boxBouton3.add(textBox2)
             boxBouton3.add(bouton3)
             @border3.add(boxBouton3)
+        
+        # Validation des parametres
+            @bouton4 = Gtk::Button.new()
+            @bouton4.set_label("Valider")
+            @bouton4.signal_connect "clicked" do |_widget|
+                # TODO
+                gMenu.changerTaille(combo2.active_text())
+            end
+
     end
 
     def on_clicked sender
@@ -84,6 +110,7 @@ class Parametres
         @vBox2.add(@border)
         @vBox2.add(@border2)
         @vBox2.add(@border3)
+        @vBox2.add(@bouton4)
         @hBox.add(@vBox1)
         @hBox.add(@vBox2)
     end
