@@ -23,11 +23,13 @@ class GestionnaireMenus
         @sousMenu = SousMenu.creer(self, @menu)
         @menuRegles = MenuRegles.creer(self,@menu)
         @menuModeDeJeu = MenuModeDeJeu.creer(self, @menu)
+        @parametres = Parametres.creer(self, @menu)
         @tuto = Tutoriel.creer(self, @menu)
         @menu.sousMenu = @sousMenu
         @menu.menuRegles = @menuRegles
         @menu.menuModeDeJeu = @menuModeDeJeu
         @menu.tuto = @tuto
+        @menu.parametres = @parametres
         @menu.afficheToi()
     end
 
