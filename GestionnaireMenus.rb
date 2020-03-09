@@ -16,7 +16,6 @@ class GestionnaireMenus
     def initialize(window)
 
         @window = window
-
         @box =  Gtk::Box.new(:horizontal)
         @window.add(@box)
 

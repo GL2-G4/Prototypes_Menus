@@ -13,9 +13,12 @@ class MenuChallenge
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
         @vBox2 = Gtk::ButtonBox.new(:vertical)
-        titre = Gtk::Label.new("Mode Challenge")
-        @vBox2.add(titre)
-        @listeBoutons = Array.new(10);
+        @listeBoutons = Array.new(30);
+
+        @scrolled = Gtk::ScrolledWindow.new
+        @scrolled.set_policy(:never, :automatic)
+       
+
         @button1 = Gtk::Button.new(:label => "- Retour -")
         @button1.signal_connect "clicked" do |_widget|
             gMenu.changerMenu(@pere, self)
@@ -42,11 +45,12 @@ class MenuChallenge
     def afficheToi()
         @vBox.add(@button1) 
         @box.add(@vBox)
-        @box.add(@vBox2)
+        @scrolled.add(@vBox2)
+        @box.add(@scrolled)
     end
 
     def enleveToi()
         @box.remove(@vBox)
-        @box.remove(@vBox2)
+        @box.remove(@scrolled)
     end
 end

@@ -13,7 +13,11 @@ class MenuApprentissage
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
         @vBox2 = Gtk::ButtonBox.new(:vertical)
-        @listeBoutons = Array.new(10);
+        @listeBoutons = Array.new(30);
+
+        @scrolled = Gtk::ScrolledWindow.new
+        @scrolled.set_policy(:never, :automatic)
+       
 
         @button1 = Gtk::Button.new(:label => "- Retour -")
         @button1.signal_connect "clicked" do |_widget|
@@ -24,9 +28,7 @@ class MenuApprentissage
             border = Gtk::Frame.new()
             boxBouton.set_border_width(10)
             boxBouton.set_width_request(gMenu.window.size().at(0) - 105)
-            text = Gtk::TextBuffer.new()
-            text.set_text("coucou")
-            textBox = Gtk::TextView.new(text)
+            textBox = Gtk::Label.new("coucou")
             bouton = Gtk::Button.new()
             bouton.set_label("Puzzle n°" + index.to_s)
             bouton.signal_connect "clicked" do |_widget|
@@ -43,11 +45,13 @@ class MenuApprentissage
     def afficheToi()
         @vBox.add(@button1) 
         @box.add(@vBox)
-        @box.add(@vBox2)
+        @scrolled.add(@vBox2)
+        @box.add(@scrolled)
     end
 
     def enleveToi()
         @box.remove(@vBox)
-        @box.remove(@vBox2)
+        @box.remove(@scrolled)
     end
+    
 end
