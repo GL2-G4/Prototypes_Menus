@@ -52,6 +52,12 @@ class GestionnaireMenus
         @window.show_all
     end
 
+    def changerTheme(t)
+        if(t == "Dark Theme")
+            @window.modify_bg(STATE_NORMAL,Gdk::Color.new(254*254, 253*253,236*236))
+        end
+    end
+
 end
 
 window = Gtk::Window.new("First Menu")
