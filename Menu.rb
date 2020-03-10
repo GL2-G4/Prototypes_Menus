@@ -56,14 +56,14 @@ class Menu
     end
 
     def afficheToi()
-        @vBox1.add(@button1)
-        @vBox1.add(@button2)
-        @vBox1.add(@button3)
-        @vBox2.add(@button4)
-        @vBox2.add(@button5)
-        @vBox2.add(@button6)
-        @hBox.add(@vBox1)
-        @hBox.add(@vBox2)
+        @vBox1.pack_start(@button1, :expand => true, :fill => true, :padding => 10)
+        @vBox1.pack_start(@button2, :expand => true, :fill => true, :padding => 10)
+        @vBox1.pack_end(@button3, :expand => true, :fill => true, :padding => 10)
+        @vBox2.pack_start(@button4, :expand => true, :fill => true, :padding => 10)
+        @vBox2.pack_start(@button5, :expand => true, :fill => true, :padding => 10)
+        @vBox2.pack_end(@button6, :expand => true, :fill => true, :padding => 10)
+        @hBox.pack_start(@vBox1, :expand => true, :fill => true, :padding => 5)
+        @hBox.pack_end(@vBox2, :expand => true, :fill => true, :padding => 5)
     end
 
     def enleveToi()
