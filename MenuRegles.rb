@@ -29,10 +29,10 @@ end
 
   def afficheToi()
     @vBox1.add(@button)
-    @vBox2.add(@button2)
-    @vBox2.add(@button3)
+    @vBox2.pack_start(@button2, :expand => true, :fill => true, :padding => $paddingBouton)
+    @vBox2.pack_start(@button3, :expand => true, :fill => true, :padding => $paddingBouton)
     @hBox.add(@vBox1)
-    @hBox.add(@vBox2)
+    @hBox.pack_end(@vBox2, :expand => true, :fill => true, :padding => $paddingBox)
   end
 
   def enleveToi()

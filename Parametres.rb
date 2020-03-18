@@ -15,11 +15,7 @@ class Parametres
         @button.signal_connect "clicked" do |_widget|
             gMenu.changerMenu(@pere, self)
         end
-
-        str = "PARAMETRES\n\n"
-        temp = Gtk::TextBuffer.new()
-        temp.set_text(str.rjust(95))
-        @titre = Gtk::Label.new( str)
+        @titre = Gtk::Label.new("PARAMETRES")
 
         # Selection d'un style de grille
 
@@ -33,7 +29,7 @@ class Parametres
             boxBouton = Gtk::ButtonBox.new(:horizontal)
             @border = Gtk::Frame.new()
             boxBouton.set_border_width(10)
-            boxBouton.set_width_request(gMenu.window.size().at(0) - 105)
+            boxBouton.set_width_request($longListe)
             textBox = Gtk::Label.new("Style de la grille : ")
             #bouton = Gtk::Button.new()
             #bouton.set_label("Theme 1")
@@ -56,7 +52,7 @@ class Parametres
             boxBouton2 = Gtk::ButtonBox.new(:horizontal)
             @border2 = Gtk::Frame.new()
             boxBouton2.set_border_width(10)
-            boxBouton2.set_width_request(gMenu.window.size().at(0) - 105)
+            boxBouton2.set_width_request($longListe)
             textBox2 = Gtk::Label.new("Taille de la fenêtre :")
             #bouton2 = Gtk::Button.new()
             #bouton2.set_label("1920 x 1080")
@@ -72,7 +68,7 @@ class Parametres
             boxBouton3 = Gtk::ButtonBox.new(:horizontal)
             @border3 = Gtk::Frame.new()
             boxBouton3.set_border_width(10)
-            boxBouton3.set_width_request(gMenu.window.size().at(0) - 105)
+            boxBouton3.set_width_request($longListe)
             textBox2 = Gtk::Label.new("Autocomplétion : ")
             bouton3 = Gtk::CheckButton.new()
             bouton3.set_label("")

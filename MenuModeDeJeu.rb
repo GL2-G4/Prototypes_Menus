@@ -37,11 +37,11 @@ class MenuModeDeJeu
     end
 
     def afficheToi()
-        @vBox.add(@button2)
-        @vBox.add(@button3)
-        @vBox.add(@button4)
-        @vBox.add(@button1)
-        @box.add(@vBox)
+        @vBox.pack_start(@button2, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox.pack_start(@button3, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox.pack_start(@button4, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox.pack_end(@button1, :expand => true, :fill => true, :padding => $paddingBouton)
+        @box.pack_start(@vBox, :expand => true, :fill => true, :padding => $paddingBox)
     end
 
     def enleveToi()

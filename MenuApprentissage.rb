@@ -13,7 +13,7 @@ class MenuApprentissage
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
         @vBox2 = Gtk::ButtonBox.new(:vertical)
-        @listeBoutons = Array.new(30);
+        @listeBoutons = Array.new($nbPuzzles);
 
         @scrolled = Gtk::ScrolledWindow.new
         @scrolled.set_policy(:never, :automatic)
@@ -21,13 +21,17 @@ class MenuApprentissage
 
         @button1 = Gtk::Button.new(:label => "- Retour -")
         @button1.signal_connect "clicked" do |_widget|
-            gMenu.changerMenu(@pere, self)
+            @gMenu.changerMenu(@pere, self)
         end
+
+        @titre = Gtk::Label.new("Apprentissage")
+        @vBox2.add(@titre)
+
         @listeBoutons.each_index { |index|
             boxBouton = Gtk::ButtonBox.new(:horizontal)
+            boxBouton.set_width_request($longListe)
             border = Gtk::Frame.new()
             boxBouton.set_border_width(10)
-            boxBouton.set_width_request(gMenu.window.size().at(0) - 105)
             textBox = Gtk::Label.new("coucou")
             bouton = Gtk::Button.new()
             bouton.set_label("Puzzle n°" + index.to_s)
