@@ -1,7 +1,7 @@
  button {
-    color: red ;
+    color: #fdba9a ;
     background-image:none ;
-    background-color: red;
+    background-color: #fdba9a;
   }
   
   label {
@@ -10,7 +10,7 @@
   }
   
   button:hover {
-    background-color: rgb(155, 86, 107);
+    background-color: #c81912;
   }
   
   button:hover label {
@@ -18,7 +18,7 @@
   }
   
   button:active {
-    background-color: black;
+    background-color: #42240c;
   }
   
   button:active label {
@@ -26,5 +26,5 @@
   }
   
    window {
-      background-color: darkred;
+      background-color: #f64b3c;
     }
