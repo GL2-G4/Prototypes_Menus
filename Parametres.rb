@@ -84,8 +84,12 @@ class Parametres
             @bouton4.set_label("Valider")
             @bouton4.signal_connect "clicked" do |_widget|
                 # TODO
-                gMenu.changerTaille(combo2.active_text())
-                gMenu.changerTheme(combo.active_text())
+                if(combo2.active_text() != nil)
+                    gMenu.changerTaille(combo2.active_text())
+                end
+                if(combo.active_text() != nil)
+                    gMenu.changerTheme(combo.active_text())
+                end
             end
 
     end

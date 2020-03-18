@@ -2,7 +2,7 @@
 button {
     color: black;
     background-image:none ;
-    background-color: white;
+    background-color: lightgoldenrodyellow;
 }
 
 label {
@@ -11,10 +11,11 @@ label {
 
 .titre {
     color: orange;
+    font-weight: bolder;
 }
 
 button:hover {
-    background-color: white;
+    background-color: gold;
 }
 
 button:hover label {
@@ -30,6 +31,6 @@ button:active label {
 }
   
 window {
-    background-color: white;
+    background-color: whitesmoke;
 }
   

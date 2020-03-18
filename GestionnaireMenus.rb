@@ -96,7 +96,7 @@ application = Gtk::Application.new
 application.signal_connect(:activate) do
 
     provider = Gtk::CssProvider.new
-    provider.load(path: "dark.css")   
+    provider.load(path: "white.css")   
 
     window = Gtk::ApplicationWindow.new(application)
     gMenu = GestionnaireMenus.new(window, application)
