@@ -85,6 +85,9 @@ class GestionnaireMenus
         elsif (t == "Red Theme")
             provider = Gtk::CssProvider.new
             provider.load(path: "red.css")
+        elsif (t == "Space Theme")
+            provider = Gtk::CssProvider.new
+            provider.load(path: "space.css")
         end
         Gtk::StyleContext.add_provider_for_screen(Gdk::Screen.default, provider, Gtk::StyleProvider::PRIORITY_USER)
     end

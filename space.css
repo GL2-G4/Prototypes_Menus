@@ -1,8 +1,7 @@
-
 button {
     color: black;
-    background-image:none ;
-    background-color: #EDEDED;
+    background-image:url("SpaceButton.png") ;
+    background-color: none;
     border: none;
 }
 
@@ -13,17 +12,24 @@ label {
 .titre {
     color: #009BDB;
     font-weight: bolder;
+    background-color: indigo;
 }
-
+.boxbouton label{
+    color: #00609B;
+    background-color: indigo;
+}
 button:hover {
+    background-image:none ;
     background-color: rgb(223, 223, 223);
 }
 
 button:hover label {
+    background-image:none ;
     color: #00609B;
 }
 
 button:active {
+    background-image:none ;
     background-color: silver;
 }
 
@@ -32,7 +38,6 @@ button:active label {
 }
   
 window {
-    background-image:none ;
-    background-color: #FEFEFE;
+    
+    background-image: url("SpaceBackground.jpg");
 }
-  

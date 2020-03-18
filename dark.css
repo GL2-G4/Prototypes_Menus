@@ -34,5 +34,6 @@ button:active label {
 }
 
  window {
+  background-image:none ;
     background-color: #333344;
   }
