@@ -1,0 +1,30 @@
+
+button {
+  background-color: gray;
+}
+
+label {
+  font-size: 28px;
+  color: black;
+}
+
+button:hover {
+  background-color: white;
+}
+
+button:hover label {
+  color: gray;
+}
+
+button:active {
+  background-color: brown;
+}
+
+button:active label {
+  color: white;
+}
+
+
+ window {
+    background-color: black;
+  }

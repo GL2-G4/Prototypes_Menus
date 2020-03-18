@@ -48,7 +48,8 @@ class Menu
         }
         @button6 = Gtk::Button.new(:label => 'Quitter')
         @button6.signal_connect('clicked') {
-            Gtk.main_quit
+            gMenu.app.quit
+            #Gtk.main_quit
         }
 
         
