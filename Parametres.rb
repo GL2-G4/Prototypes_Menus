@@ -24,7 +24,7 @@ class Parametres
                 combo = Gtk::ComboBoxText.new
                 combo.append("t1", "Theme 1")
                 combo.append("t2", "Dark Theme")
-                combo.append("t3", "Theme 3")
+                combo.append("t3", "Red Theme")
 
             boxBouton = Gtk::ButtonBox.new(:horizontal)
             @border = Gtk::Frame.new()
