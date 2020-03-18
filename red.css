@@ -1,24 +1,33 @@
  button {
-    color: #fdba9a ;
+    color: #78202C;
     background-image:none ;
-    background-color: #fdba9a;
+    background-color: #78202C;
+    border: none;
   }
   
   label {
     font-size: 15px;
-    color: black;
+    color: #0D0909;
+    font-weight: bolder;
   }
-  
+
+  .titre {
+    color: darkred;
+    font-weight: bolder;
+  }
   button:hover {
-    background-color: #c81912;
+    background-color: #6B0A17;
   }
   
   button:hover label {
-    color: gray;
+    color: black;
+  }
+  .combo{
+    color: darkred;
   }
   
   button:active {
-    background-color: #42240c;
+    background-color: #242020;
   }
   
   button:active label {
@@ -26,5 +35,5 @@
   }
   
    window {
-      background-color: #f64b3c;
+      background-color: #84343F;
     }

@@ -2,28 +2,29 @@
 button {
     color: black;
     background-image:none ;
-    background-color: lightgoldenrodyellow;
+    background-color: #EDEDED;
+    border: none;
 }
 
 label {
-    color: black;
+    color: #00609B;
 }
 
 .titre {
-    color: orange;
+    color: #009BDB;
     font-weight: bolder;
 }
 
 button:hover {
-    background-color: gold;
+    background-color: rgb(223, 223, 223);
 }
 
 button:hover label {
-    color: black;
+    color: #00609B;
 }
 
 button:active {
-    background-color: blue;
+    background-color: silver;
 }
 
 button:active label {
@@ -31,6 +32,6 @@ button:active label {
 }
   
 window {
-    background-color: whitesmoke;
+    background-color: #FEFEFE;
 }
   
