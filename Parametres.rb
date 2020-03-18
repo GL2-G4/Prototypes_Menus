@@ -23,7 +23,7 @@ class Parametres
 
                 combo = Gtk::ComboBoxText.new
                 combo.append("t1", "Theme 1")
-                combo.append("t2", "Theme 2")
+                combo.append("t2", "Dark Theme")
                 combo.append("t3", "Theme 3")
 
             boxBouton = Gtk::ButtonBox.new(:horizontal)
@@ -84,6 +84,7 @@ class Parametres
             @bouton4.signal_connect "clicked" do |_widget|
                 # TODO
                 gMenu.changerTaille(combo2.active_text())
+                gMenu.changerTheme(combo.active_text())
             end
 
     end

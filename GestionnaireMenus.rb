@@ -3,6 +3,7 @@ load "SousMenu.rb"
 
 
 require "gtk3"
+require "gdk3"
 
 $nbPuzzles = 30
 $paddingBouton = 40
@@ -13,14 +14,16 @@ class GestionnaireMenus
 
     attr :box, true
     attr :window, true
+    attr :app, true
 
-    def GestionnaireMenus.creer(window)
-        new(window)
+    def GestionnaireMenus.creer(window, application)
+        new(window, application)
     end
  
-    def initialize(window)
+    def initialize(window, application)
 
         @window = window
+        @app = application
         @box =  Gtk::Box.new(:horizontal)
         @box.set_spacing($paddingBox)
         #@box.set_homogeneous(true)
@@ -68,18 +71,33 @@ class GestionnaireMenus
             $paddingBox = 30
             $paddingBouton = 40
         end
+        @window.window_position=Gtk::WindowPosition::CENTER
         @window.show_all
+    end
+
+    def changerTheme(t)
+        if(t == "Dark Theme")
+            #@window.modify_bg(STATE_NORMAL,Gdk::Color.new(254*254, 253*253,236*236))
+        end
     end
 
 end
 
-window = Gtk::Window.new("First Menu")
-window.set_default_size(720, 480)
-window.resizable=(false)
-window.set_border_width(10)
-gMenu = GestionnaireMenus.new(window)
+       
+application = Gtk::Application.new
+application.signal_connect(:activate) do
+    provider = Gtk::CssProvider.new
+    provider.load(path: "dark.css")   
+    window = Gtk::ApplicationWindow.new(application)
+    window.style_context.add_provider(provider, Gtk::StyleProvider::PRIORITY_APPLICATION)
+    window.set_default_size(720, 480)
+    window.resizable=(false)
+    window.set_border_width(10)
+    window.window_position=Gtk::WindowPosition::CENTER
+    gMenu = GestionnaireMenus.new(window, application)
 
-window.signal_connect("delete-event") { |_widget| Gtk.main_quit }
-window.show_all
-
-Gtk.main
+    window.signal_connect("delete-event") { |_widget| Gtk.main_quit }
+    window.show_all
+end
+application.run
+#Gtk.main
