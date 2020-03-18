@@ -1,0 +1,35 @@
+
+button {
+    color: black;
+    background-image:none ;
+    background-color: white;
+}
+
+label {
+    color: black;
+}
+
+.titre {
+    color: orange;
+}
+
+button:hover {
+    background-color: white;
+}
+
+button:hover label {
+    color: black;
+}
+
+button:active {
+    background-color: blue;
+}
+
+button:active label {
+    color: white;
+}
+  
+window {
+    background-color: white;
+}
+  
