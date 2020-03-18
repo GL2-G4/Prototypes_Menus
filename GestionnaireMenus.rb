@@ -77,8 +77,13 @@ class GestionnaireMenus
 
     def changerTheme(t)
         if(t == "Dark Theme")
-            #@window.modify_bg(STATE_NORMAL,Gdk::Color.new(254*254, 253*253,236*236))
+            provider = Gtk::CssProvider.new
+            provider.load(path: "dark.css")
+        elsif (t == "Red Theme")
+            provider = Gtk::CssProvider.new
+            provider.load(path: "red.css")
         end
+        Gtk::StyleContext.add_provider_for_screen(Gdk::Screen.default, provider, Gtk::StyleProvider::PRIORITY_USER)
     end
 
 end
@@ -86,16 +91,20 @@ end
        
 application = Gtk::Application.new
 application.signal_connect(:activate) do
+
     provider = Gtk::CssProvider.new
     provider.load(path: "dark.css")   
+
     window = Gtk::ApplicationWindow.new(application)
-    window.style_context.add_provider(provider, Gtk::StyleProvider::PRIORITY_APPLICATION)
+    gMenu = GestionnaireMenus.new(window, application)
+
+    Gtk::StyleContext.add_provider_for_screen(Gdk::Screen.default, provider, Gtk::StyleProvider::PRIORITY_USER)
+   
     window.set_default_size(720, 480)
     window.resizable=(false)
     window.set_border_width(10)
     window.window_position=Gtk::WindowPosition::CENTER
-    gMenu = GestionnaireMenus.new(window, application)
-
+    
     window.signal_connect("delete-event") { |_widget| Gtk.main_quit }
     window.show_all
 end

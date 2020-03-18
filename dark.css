@@ -1,15 +1,17 @@
 
 button {
+  color: gray;
+  background-image:none ;
   background-color: gray;
 }
 
 label {
-  font-size: 28px;
+  font-size: 25px;
   color: black;
 }
 
 button:hover {
-  background-color: white;
+  background-color: darkblue;
 }
 
 button:hover label {
@@ -17,14 +19,13 @@ button:hover label {
 }
 
 button:active {
-  background-color: brown;
+  background-color: black;
 }
 
 button:active label {
   color: white;
 }
 
-
  window {
-    background-color: black;
+    background-color: rgb(66, 66, 66);
   }
