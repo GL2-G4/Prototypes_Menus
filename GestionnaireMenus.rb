@@ -76,7 +76,10 @@ class GestionnaireMenus
     end
 
     def changerTheme(t)
-        if(t == "Dark Theme")
+        if(t == "Default Theme")
+            provider = Gtk::CssProvider.new
+            provider.load(path: "white.css")
+        elsif(t == "Dark Theme")
             provider = Gtk::CssProvider.new
             provider.load(path: "dark.css")
         elsif (t == "Red Theme")

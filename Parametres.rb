@@ -16,13 +16,14 @@ class Parametres
             gMenu.changerMenu(@pere, self)
         end
         @titre = Gtk::Label.new("PARAMETRES")
+        @titre.style_context.add_class("titre")
 
         # Selection d'un style de grille
 
             # A combobox with string IDs
 
                 combo = Gtk::ComboBoxText.new
-                combo.append("t1", "Theme 1")
+                combo.append("t1", "Default Theme")
                 combo.append("t2", "Dark Theme")
                 combo.append("t3", "Red Theme")
 

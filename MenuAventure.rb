@@ -25,6 +25,7 @@ class MenuAventure
         end
 
         @titre = Gtk::Label.new("Aventure")
+        @titre.style_context.add_class("titre")
         @vBox2.add(@titre)
 
         @listeBoutons.each_index { |index|

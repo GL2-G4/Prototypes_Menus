@@ -12,22 +12,11 @@ class Regles
     @vBox1 = Gtk::Box.new(:vertical)
     @vBox2 = Gtk::Box.new(:vertical)
     @hBox2 = Gtk::Box.new(:horizontal)
-    temp = Gtk::TextBuffer.new()
-    temp.set_text(
-        "Each puzzle consists of a rectangular lattice of dots with some clues in various places.
-        The object is to link adjacent dots so:\n
-        \t*The value of each clue equals the number of links surrounding it.
-        \t*Empty squares may be surrounded by any number of links.
-        \t*When completed, the solution forms a single continuous loop with no crossings or branches."
-        )
-    @text = Gtk::TextView.new( temp)
-    @text.editable=(false)
-    str = "REGLES\n\n"
-    temp2 = Gtk::TextBuffer.new()
-    temp2.set_text(
-      str.rjust(95)
-      )
-    @titre = Gtk::Label.new( str)
+    @titre = Gtk::Label.new("Each puzzle consists of a rectangular lattice of dots with some clues in various places.
+      The object is to link adjacent dots so:\n
+      \t*The value of each clue equals the number of links surrounding it.
+      \t*Empty squares may be surrounded by any number of links.
+      \t*When completed, the solution forms a single continuous loop with no crossings or branches.")
     @image1 = Gtk::Image.new("regles1.jpg")
     @image2 = Gtk::Image.new("regles2.jpg")
     @image1.set_padding(10, 10)
@@ -44,7 +33,6 @@ end
     @vBox1.add(@button)
     @vBox2.pack_start(Gtk::Alignment.new(1, 0, 0, 0), :expand => false)
     @vBox2.add(@titre)
-    @vBox2.add(@text)
     @hBox2.add(@image1)
     @hBox2.add(@image2)
     @vBox2.add(@hBox2)
