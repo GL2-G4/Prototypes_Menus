@@ -57,14 +57,14 @@ class Menu
     end
 
     def afficheToi()
-        @vBox1.pack_start(@button1, :expand => true, :fill => true, :padding => 10)
-        @vBox1.pack_start(@button2, :expand => true, :fill => true, :padding => 10)
-        @vBox1.pack_end(@button3, :expand => true, :fill => true, :padding => 10)
-        @vBox2.pack_start(@button4, :expand => true, :fill => true, :padding => 10)
-        @vBox2.pack_start(@button5, :expand => true, :fill => true, :padding => 10)
-        @vBox2.pack_end(@button6, :expand => true, :fill => true, :padding => 10)
-        @hBox.pack_start(@vBox1, :expand => true, :fill => true, :padding => 5)
-        @hBox.pack_end(@vBox2, :expand => true, :fill => true, :padding => 5)
+        @vBox1.pack_start(@button1, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox1.pack_start(@button2, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox1.pack_end(@button3, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox2.pack_start(@button4, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox2.pack_start(@button5, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox2.pack_end(@button6, :expand => true, :fill => true, :padding => $paddingBouton)
+        @hBox.pack_start(@vBox1, :expand => true, :fill => true, :padding => $paddingBox)
+        @hBox.pack_end(@vBox2, :expand => true, :fill => true, :padding => $paddingBox)
     end
 
     def enleveToi()
