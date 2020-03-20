@@ -78,16 +78,19 @@ class GestionnaireMenus
     def changerTheme(t)
         if(t == "Default Theme")
             provider = Gtk::CssProvider.new
-            provider.load(path: "white.css")
+            provider.load(path: "./css/white.css")
         elsif(t == "Dark Theme")
             provider = Gtk::CssProvider.new
-            provider.load(path: "dark.css")
+            provider.load(path: "./css/dark.css")
         elsif (t == "Red Theme")
             provider = Gtk::CssProvider.new
-            provider.load(path: "red.css")
+            provider.load(path: "./css/red.css")
         elsif (t == "Space Theme")
             provider = Gtk::CssProvider.new
-            provider.load(path: "space.css")
+            provider.load(path: "./css/space.css")
+        elsif (t == "Happy Theme")
+            provider = Gtk::CssProvider.new
+            provider.load(path: "./css/happy.css")
         end
         Gtk::StyleContext.add_provider_for_screen(Gdk::Screen.default, provider, Gtk::StyleProvider::PRIORITY_USER)
     end
@@ -99,7 +102,7 @@ application = Gtk::Application.new
 application.signal_connect(:activate) do
 
     provider = Gtk::CssProvider.new
-    provider.load(path: "white.css")   
+    provider.load(path: "./css/white.css")   
 
     window = Gtk::ApplicationWindow.new(application)
     gMenu = GestionnaireMenus.new(window, application)
