@@ -29,6 +29,7 @@ class Parametres
                 combo.append("t3", "Red Theme")
                 combo.append("t4", "Space Theme")
                 combo.append("t5", "Happy Theme")
+                combo.append("t6", "Shrek Theme")
 
             boxBouton = Gtk::ButtonBox.new(:horizontal)
             @border = Gtk::Frame.new()
@@ -51,7 +52,7 @@ class Parametres
                 combo2.append("t1", "1920 x 1080")
                 combo2.append("t2", "1600 x 900")
                 combo2.append("t3", "1280 x 720")
-                combo2.append("t3", "720 x 480")
+                combo2.append("t4", "720 x 480")
 
             boxBouton2 = Gtk::ButtonBox.new(:horizontal)
             @border2 = Gtk::Frame.new()
