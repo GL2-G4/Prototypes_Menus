@@ -13,6 +13,11 @@ class MenuRegles
     @pere = menuPere
     @vBox1 = Gtk::Box.new(:vertical)
     @vBox2 = Gtk::Box.new(:vertical)
+
+    @titre = Gtk::Label.new("Règles et techniques")
+    @titre.style_context.add_class("titre")
+    @vBox2.add(@titre)
+
     @button = Gtk::Button.new(:label => "- Retour -")
     @button.signal_connect "clicked" do |_widget|
       gMenu.changerMenu(@pere, self)

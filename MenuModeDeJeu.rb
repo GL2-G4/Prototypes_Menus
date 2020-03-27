@@ -17,6 +17,11 @@ class MenuModeDeJeu
         @box = gMenu.box
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
+        @vBox2 = Gtk::Box.new(:vertical)
+
+        @titre = Gtk::Label.new("Mode de jeu")
+        @titre.style_context.add_class("titre")
+        @vBox.add(@titre)
 
         @button1 = Gtk::Button.new(:label => "- Retour -")
         @button1.signal_connect "clicked" do |_widget|
@@ -39,12 +44,14 @@ class MenuModeDeJeu
     def afficheToi()
         @vBox.pack_start(@button2, :expand => true, :fill => true, :padding => $paddingBouton)
         @vBox.pack_start(@button3, :expand => true, :fill => true, :padding => $paddingBouton)
-        @vBox.pack_start(@button4, :expand => true, :fill => true, :padding => $paddingBouton)
-        @vBox.pack_end(@button1, :expand => true, :fill => true, :padding => $paddingBouton)
-        @box.pack_start(@vBox, :expand => true, :fill => true, :padding => $paddingBox)
+        @vBox.pack_end(@button4, :expand => true, :fill => true, :padding => $paddingBouton)
+        @vBox2.add(@button1)
+        @box.add(@vBox2)
+        @box.pack_end(@vBox, :expand => true, :fill => true, :padding => 0)
     end
 
     def enleveToi()
+        @box.remove(@vBox2)
         @box.remove(@vBox)
     end
 end
