@@ -1,11 +1,13 @@
+/***********BOUTONS***********/
 
 button {
     color: black;
-    background-image:none ;
+    background-image: none;
     background-color: #EDEDED;
     border: none;
 }
 
+<<<<<<< HEAD:white.css
 label {
     color: #00609B;
 }
@@ -20,7 +22,10 @@ button label {
     color: #00609B;
 }
 
+=======
+>>>>>>> e94819c9e694e3785d7175f1943071148018c5d1:css/white.css
 button:hover {
+    background-image: none;
     background-color: rgb(223, 223, 223);
 }
 
@@ -29,11 +34,31 @@ button:hover label {
 }
 
 button:active {
+    background-image: none;
     background-color: silver;
 }
 
 button:active label {
     color: white;
+}
+
+/***********LABELS***********/
+
+label {
+    color: #00609B;
+    font-weight: normal;
+}
+
+.titre {
+    color: #009BDB;
+    font-weight: bolder;
+    background-color: white;
+}
+
+/***********COMBOS***********/
+
+.combo{
+    color: black;
 }
   
 window {
