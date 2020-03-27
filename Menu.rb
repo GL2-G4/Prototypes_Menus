@@ -65,10 +65,12 @@ class Menu
         @vBox2.pack_end(@button6, :expand => true, :fill => true, :padding => $paddingBouton)
         @hBox.pack_start(@vBox1, :expand => true, :fill => true, :padding => $paddingBox)
         @hBox.pack_end(@vBox2, :expand => true, :fill => true, :padding => $paddingBox)
+        @hBox.set_homogeneous(true)
     end
 
     def enleveToi()
       @hBox.remove(@vBox1)
       @hBox.remove(@vBox2)
+      @hBox.set_homogeneous(false)
     end
 end

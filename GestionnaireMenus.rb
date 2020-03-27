@@ -26,7 +26,6 @@ class GestionnaireMenus
         @app = application
         @box =  Gtk::Box.new(:horizontal)
         @box.set_spacing($paddingBox)
-        #@box.set_homogeneous(true)
         @window.add(@box)
 
         @menu = Menu.creer(self)
