@@ -1,7 +1,6 @@
 button {
     color: black;
     background-image:url("SpaceButton.png") ;
-    background-color: none;
     border: none;
 }
 
@@ -24,6 +23,7 @@ button:hover {
 }
 
 button:hover label {
+    
     background-image:none ;
     color: #00609B;
 }

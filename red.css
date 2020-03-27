@@ -14,6 +14,7 @@
   .titre {
     color: darkred;
     font-weight: bolder;
+    background: none;
   }
   button:hover {
     background-color: #6B0A17;

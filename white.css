@@ -13,6 +13,11 @@ label {
 .titre {
     color: #009BDB;
     font-weight: bolder;
+    background: none;
+}
+
+button label {
+    color: #00609B;
 }
 
 button:hover {
