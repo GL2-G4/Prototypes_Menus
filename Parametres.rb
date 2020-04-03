@@ -121,6 +121,12 @@ class Parametres
     end
 
     def enleveToi()
+        @vBox1.remove(@button)
+        @vBox2.remove(@titre)
+        @vBox2.remove(@border)
+        @vBox2.remove(@border2)
+        @vBox2.remove(@border3)
+        @vBox2.remove(@bouton4)
         @hBox.remove(@vBox1)
         @hBox.remove(@vBox2)
     end

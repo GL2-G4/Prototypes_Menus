@@ -69,8 +69,14 @@ class Menu
     end
 
     def enleveToi()
-      @hBox.remove(@vBox1)
-      @hBox.remove(@vBox2)
-      @hBox.set_homogeneous(false)
+        @vBox1.remove(@button1)
+        @vBox1.remove(@button2)
+        @vBox1.remove(@button3)
+        @vBox2.remove(@button4)
+        @vBox2.remove(@button5)
+        @vBox2.remove(@button6)
+        @hBox.remove(@vBox1)
+        @hBox.remove(@vBox2)
+        @hBox.set_homogeneous(false)
     end
 end

@@ -51,6 +51,10 @@ class MenuModeDeJeu
     end
 
     def enleveToi()
+        @vBox.remove(@button2)
+        @vBox.remove(@button3)
+        @vBox.remove(@button4)
+        @vBox2.remove(@button1)
         @box.remove(@vBox2)
         @box.remove(@vBox)
     end

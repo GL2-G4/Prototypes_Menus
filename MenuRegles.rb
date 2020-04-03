@@ -41,6 +41,9 @@ end
   end
 
   def enleveToi()
+    @vBox1.remove(@button)
+    @vBox2.remove(@button2)
+    @vBox2.remove(@button3)
     @hBox.remove(@vBox1)
     @hBox.remove(@vBox2)
   end
