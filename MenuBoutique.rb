@@ -1,9 +1,10 @@
+load "../SlitherLink/Boutique/Boutique.rb"
 require "gtk3"
-class MenuAventure
+class MenuBoutique
 
     private_class_method :new
 
-    def MenuAventure.creer(gMenu, menuPere)
+    def MenuBoutique.creer(gMenu, menuPere)
         new(gMenu, menuPere)
     end
 
@@ -12,8 +13,9 @@ class MenuAventure
         @box = gMenu.box
         @pere = menuPere
         @vBox = Gtk::Box.new(:vertical)
-        @vBox2 = Gtk::ButtonBox.new(:vertical)
-        @listeBoutons = Array.new($nbPuzzles);
+        @vBox2 = Gtk::Box.new(:vertical)
+        @listeGrilles = Array.new($nbPuzzlesPayants)
+        @listeThemes = Array.new(3)
 
         @scrolled = Gtk::ScrolledWindow.new
         @scrolled.set_policy(:never, :automatic)
@@ -24,7 +26,7 @@ class MenuAventure
             @gMenu.changerMenu(@pere, self)
         end
 
-        @titre = Gtk::Label.new("Aventure")
+        @titre = Gtk::Label.new("Boutique")
         @titre.style_context.add_class("titre")
         @vBox2.add(@titre)
 
@@ -43,23 +45,42 @@ class MenuAventure
         @boxJoueur = Gtk::Box.new(:vertical)
         @borderJoueur = Gtk::Frame.new()
 
-        @listeBoutons.each_index { |index|
+        @listeGrilles.each_index { |index|
             boxBouton = Gtk::ButtonBox.new(:horizontal)
             boxBouton.set_width_request($longListe)
             border = Gtk::Frame.new()
             boxBouton.set_border_width(10)
-            textBox = Gtk::Label.new("coucou")
+            textBox = Gtk::Label.new("Acheter le puzzle n°" + index.to_s)
             bouton = Gtk::Button.new()
             bouton.set_label("Puzzle n°" + index.to_s)
             bouton.signal_connect "clicked" do |_widget|
-                puts "Jouer au puzzle n°" + index.to_s
+                puts "Acheter le puzzle n°" + index.to_s
             end
-            @listeBoutons[index] = bouton
+            @listeGrilles[index] = bouton
             boxBouton.add(textBox)
             boxBouton.add(bouton)
             border.add(boxBouton)
             @vBox2.add(border)
-        } 
+        }
+
+        @listeThemes.each_index { |index|
+            boxBouton = Gtk::ButtonBox.new(:horizontal)
+            boxBouton.set_width_request($longListe)
+            border = Gtk::Frame.new()
+            boxBouton.set_border_width(10)
+            textBox = Gtk::Label.new("Acheter le theme n°" + index.to_s)
+            bouton = Gtk::Button.new()
+            bouton.set_label("Theme n°" + index.to_s)
+            bouton.signal_connect "clicked" do |_widget|
+                puts "Acheter le theme n°" + index.to_s
+            end
+            @listeThemes[index] = bouton
+            boxBouton.add(textBox)
+            boxBouton.add(bouton)
+            border.add(boxBouton)
+            @vBox2.add(border)
+        }
+
     end
 
     def afficheToi()
@@ -74,6 +95,12 @@ class MenuAventure
     end
 
     def enleveToi()
+        @vBox.remove(@button1)
+        @boxJoueur.remove(@boxEtoile)
+        @boxJoueur.remove(@boxArgent)
+        @borderJoueur.remove(@boxJoueur)
+        @vBox.remove(@borderJoueur)
+        @scrolled.remove(@vBox2)
         @box.remove(@vBox)
         @box.remove(@scrolled)
     end

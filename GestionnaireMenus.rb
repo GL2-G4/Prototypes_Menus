@@ -1,20 +1,24 @@
 load "Menu.rb"
 load "SousMenu.rb"
+load "../SlitherLink/Joueur/Joueur.rb"
 
 
 require "gtk3"
 require "gdk3"
 
 $nbPuzzles = 30
+$nbPuzzlesPayants = 5
 $paddingBouton = 40
 $paddingBox = 30
 $longListe = 550
+$icone = 15
 
 class GestionnaireMenus
 
     attr :box, true
     attr :window, true
     attr :app, true
+    attr :joueur, true
 
     def GestionnaireMenus.creer(window, application)
         new(window, application)
@@ -27,6 +31,7 @@ class GestionnaireMenus
         @box =  Gtk::Box.new(:horizontal)
         @box.set_spacing($paddingBox)
         @window.add(@box)
+        @joueur = Joueur.new()
 
         @menu = Menu.creer(self)
         @sousMenu = SousMenu.creer(self, @menu)
@@ -34,11 +39,13 @@ class GestionnaireMenus
         @menuModeDeJeu = MenuModeDeJeu.creer(self, @menu)
         @parametres = Parametres.creer(self, @menu)
         @tuto = Tutoriel.creer(self, @menu)
+        @boutique = MenuBoutique.creer(self, @menu)
         @menu.sousMenu = @sousMenu
         @menu.menuRegles = @menuRegles
         @menu.menuModeDeJeu = @menuModeDeJeu
         @menu.tuto = @tuto
         @menu.parametres = @parametres
+        @menu.boutique = @boutique
         @menu.afficheToi()
     end
 
@@ -70,7 +77,7 @@ class GestionnaireMenus
             $paddingBox = 30
             $paddingBouton = 40
         end
-        @window.window_position=Gtk::WindowPosition::CENTER
+        #@window.window_position=Gtk::WindowPosition::CENTER
         @window.show_all
     end
 
